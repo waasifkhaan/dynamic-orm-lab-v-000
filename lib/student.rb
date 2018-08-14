@@ -12,7 +12,7 @@ def self.find_by_name(name)
 end
 
 def self.find_by(input)
-  sql = "SELECT * FROM #{self.table_name} WHERE  "}
+  sql = "SELECT * FROM #{self.table_name} WHERE name = ? || WHERE id = ? || WHERE grade = ? "}
     DB[:conn].execute(sql)
 end 
 end
