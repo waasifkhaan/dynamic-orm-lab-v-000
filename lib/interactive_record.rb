@@ -8,5 +8,5 @@ def self.table_name
 end 
 def self.column_names 
   DB[:conn].result_as_hash = true 
-  sql = "SELECT * FROM #{table_name}"
+  sql = "PRAGMA table_info" #{table_name}"
 end
