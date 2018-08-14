@@ -11,7 +11,7 @@ def self.find_by_name(name)
     DB[:conn].execute(sql,name)
 end
 
-def self.find_by(name)
+def self.find_by(arg)
     sql = "SELECT * FROM #{self.table_name} WHERE grade = ? "
     DB[:conn].execute(sql,name)
 end
