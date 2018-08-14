@@ -15,7 +15,7 @@ def self.find_by(arg)
     arg.collect do |key, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value} "
       DB[:conn].execute(sql)
-    end.flatten 
+    end.first
     
     
 end
