@@ -12,8 +12,11 @@ def self.find_by_name(name)
 end
 
 def self.find_by(arg)
-    sql = "SELECT * FROM #{self.table_name} WHERE  = ? "
-    DB[:conn].execute(sql,name)
+    arg.each.with_index do |key, value|
+      sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value} "
+    end 
+    
+    DB[:conn].execute(sql)
 end
 
 end
