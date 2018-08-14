@@ -15,5 +15,5 @@ def self.column_names
     column_names << row["name"]
     end
     column_names
-    
+  end 
 end
